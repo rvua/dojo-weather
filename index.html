@@ -18,9 +18,9 @@
             <!-- </div> -->
             <!-- <div id="dw-right-nav"> -->
             <ul class="nav-links">
-                <li><a href="#" onclick="alert('Burbank Weather Report')">Burbank</a></li>
-                <li><a href="#" onclick="alert('Chicago Weather Report')">Chicago</a></li>
-                <li><a href="#" onclick="alert('Dallas Weather Report')">Dallas</a></li>
+                <li><a href="#" onclick="weatherAlert()">Burbank</a></li>
+                <li><a href="#" onclick="weatherAlert()">Chicago</a></li>
+                <li><a href="#" onclick="weatherAlert()">Dallas</a></li>
             </ul>
             <!-- </div> -->
         </div>
@@ -37,7 +37,7 @@
             </div>
             <div id="show-temp-in-div">
                 <p class="show-temp-ptag">show temperature in</p>
-                <select name="degrees" id="degrees">
+                <select name="degrees" id="degrees" onchange="convert(this)">
                     <option value="fahrenheit">°F</option>
                     <option value="celsius">°C</option>
                 </select>
@@ -138,7 +138,7 @@
                     </p>
                 </div>
                 <div id="cookie-accept-btn">
-                    <button class="accept-btn" onclick="remove(this)">I accept</button>
+                    <button class="accept-btn" onclick="acceptRemove()">I accept</button>
                 </div>
             </div>
         </div>
