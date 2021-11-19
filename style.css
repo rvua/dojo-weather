@@ -1,243 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-nav{
-    margin-bottom: 30px;
-    height: 75px;
-    background-color: rgb(108, 209, 247);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.top {
+    background-color: #9fc5f8;
+    color: #fff;
 }
 
-#nav-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0 auto;
+.container, .nav {
     width: 1000px;
+    margin: 0 auto;
 }
 
-.dojo-weather{
-    font-size: 44px;
-    color: white;
+.nav {
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.nav-links{
+.nav ul {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav h1 {
+    font-size: 2.5rem;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.subtitle-line {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #999;
+}
+
+.subtitle-line h2 {
+    font-size: 1.8rem;
+}
+
+.subtitle-line select, .subtitle-line label {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.subtitle-line select {
+    width: 60px;
+}
+
+.row {
+    display: flex;
+}
+
+.forecast {
+    flex: 1;
+    text-align: center;
+    background-color: #ddd;
+    padding: 40px 0;
+    margin-right: 20px;
+}
+
+.forecast:last-child {
+    margin-right: 0;
+}
+
+.forecast img {
+    border-radius: 50%;
+    width: 156px;
+    margin: 40px 0;
+}
+
+.forecast p {
+    font-size: 1.2rem;
+}
+
+.temperatures {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.high, .low {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.high::after, .low::after {
+    content: "°";
+}
+
+.high {
+    color: #cf2a27;
+}
+
+.low {
+    color: #2b78e4;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.cookie-policy {
+    box-sizing: border-box;
+    width: 1000px;
+    height: 160px;
+    padding: 20px;
+    border: 2px solid #999;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style-type: none;
-    width: 30%;
-    font-size: 26px;
-    
 }
 
-/* Nav List */
-.nav-links a {
-    color: white;
-    text-decoration: none;
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #000;
+    box-shadow: 4px 4px #000;
+    background-color: #9fc5f8;
+    cursor: pointer;
 }
 
-
-/* Main */
-#main-container{
-    align-items: flex-start;
+.text {
+    width: 70%;
 }
 
-#main-first-row-div{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 54%;
-    position: relative;
-    border-bottom: 2px solid black;
-    border-style: solid;
-    border-right: none;
-    border-top: none;
-    border-left: none;
-    margin: 0 auto;
+.text h2 {
+    font-size: 1.8rem;
 }
 
-#city-div{
-    padding-right: 163px; 
-}
-
-.san-jose{
-    font-size: 40px;
-}
-
-#show-temp-in-div{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 447px;
-}
-
-.show-temp-ptag{
-    padding-right: 14px;
-}
-
-#degrees {
-    height: 35px;
-    width: 45px;
-}
-
-
-/* Columns */
-#main-weekly-weather-div{
-    display: flex;
-    padding-top: 30px;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 30px 257px;
-}
-
-#col-1-content {
-    height: 275px;
-    width: 13%;
-    border-style: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgb(228, 227, 227);
-}
-
-.rain-img{
-    height: 110px;
-    border: none;
-    border-radius: 100%;
-}
-
-#weekly-weather-day-today{
-    padding-left: 36px;
-    padding-top: 10px;
-    padding-right: 34px;
-}
-
-#weekly-weather-day-tomorrow{
-    padding-left: 19px;
-    padding-top: 10px;
-    padding-right: 17px;
-}
-
-#weekly-weather-day-friday{
-    padding-left: 36px;
-    padding-top: 10px;
-    padding-right: 34px;
-}
-
-#weekly-weather-day-saturday{
-    padding-left: 19px;
-    padding-top: 10px;
-    padding-right: 17px;
-}
-
-#weekly-weather-img{
-    padding-left: 7px;
-    padding-top: 20px;
-    padding-right: 63px;
-}
-
-#some-ptag-rain{
-    padding-left: 24px;
-    padding-top: 15px;
-    padding-right: 19px;
-}
-
-#some-ptag-sun{
-    padding-left: 24px;
-    padding-top: 15px;
-    padding-right: 19px;
-}
-
-#some-ptag-cloud{
-    padding-left: 16px;
-    padding-top: 15px;
-    padding-right: 2px
-}
-
-#high-low{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 110%;
-    padding-top: 30px;
-    margin: 0 auto;
-}
-
-.high{
-    color: red;
-    font-size: 25px;
-}
-
-.low{
-    color: blue;
-    font-size: 25px;
-}
-
-#col-2-content{
-    height: 275px;
-    width: 13%;
-    border-style: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgb(228, 227, 227);
-}
-
-.sun-img{
-    height: 110px;
-    border: none;
-    border-radius: 100%;
-}
-
-#col-3-content{
-    height: 275px;
-    width: 13%;
-    border-style: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgb(228, 227, 227);
-}
-
-.cloud-img{
-    height: 110px;
-    border: none;
-    border-radius: 100%;
-}
-
-#col-4-content{
-    height: 275px;
-    width: 13%;
-    border-style: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgb(228, 227, 227);
-}
-
-/* Cookies */
-#main-cookie-div{
-    display: flex;
-    padding-top: 15px;
-    /* position: fixed; */
-}
-
-#cookie-div-content{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 645px;
-    border: solid;
-    margin: 0 auto;
-    height: 102px;
-}
-
-.accept-btn{
-    width: 91px;
-    height: 38px;
+.text p {
+    font-size: 1.2rem;
 }

@@ -4,148 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojo Weather</title>
+    <title>DojoWeather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- STRUCTURE -->
-
-    <!-- Begin Navigation -->
-    <nav>
-        <div id="nav-container">
-            <!-- <div id="dw-left-title"> -->
-            <h1 class="dojo-weather">DojoWeather</h1>
-            <!-- </div> -->
-            <!-- <div id="dw-right-nav"> -->
-            <ul class="nav-links">
-                <li><a href="#" onclick="weatherAlert()">Burbank</a></li>
-                <li><a href="#" onclick="weatherAlert()">Chicago</a></li>
-                <li><a href="#" onclick="weatherAlert()">Dallas</a></li>
+    <div class="top">
+        <div class="nav">
+            <h1>DojoWeather</h1>
+            <ul class="links">
+                <li onclick="loading()"><a href="#">Burbank</a></li>
+                <li onclick="loading()"><a href="#">Chicago</a></li>
+                <li onclick="loading()"><a href="#">Dallas</a></li>
             </ul>
-            <!-- </div> -->
         </div>
-    </nav>
-    <!-- End Navigation  -->
-
-    <!-- container align-items flex start begins -->
-    <div id="main-container">
-
-        <!-- First Row (San Jose / Temp) begins-->
-        <div id="main-first-row-div">
-            <div id="city-div">
-                <h2 class="san-jose">San Jose</h2>
-            </div>
-            <div id="show-temp-in-div">
-                <p class="show-temp-ptag">show temperature in</p>
-                <select name="degrees" id="degrees" onchange="convert(this)">
-                    <option value="fahrenheit">°F</option>
-                    <option value="celsius">°C</option>
-                </select>
-            </div>
-        </div>
-        <!-- First Row (San Jose / Temp) ends-->
-
-        <!-- Weekly Weather Row begins -->
-        <div id="main-weekly-weather-div">
-
-            <!-- Day 1 Weather begins -->
-            <div id="col-1-content">
-                <div id="weekly-weather-day-today">
-                    <h3 class="day">Today</h3>
-                </div>
-                <div id="weekly-weather-img">
-                    <img src="./assets/some_rain.png" alt="rain" class="rain-img">
-                </div>
-                <div id="some-ptag-rain">
-                    <p class="some-rain">some rain</p>
-                </div>
-                <div id="high-low">
-                    <h4 class="high">24°</h4>
-                    <h4 class="low">18°</h4>
-                </div>
-            </div>
-            <!-- Day 1 Weather ends -->
-
-            <!-- Day 2 Weather begins -->
-            <div id="col-2-content">
-                <div id="weekly-weather-day-tomorrow">
-                    <h3 class="day">Tomorrow</h3>
-                </div>
-                <div id="weekly-weather-img">
-                    <img src="./assets/some_sun.png" alt="sun" class="sun-img">
-                </div>
-                <div id="some-ptag-sun">
-                    <p class="some-sun">some sun</p>
-                </div>
-                <div id="high-low">
-                    <h4 class="high">27°</h4>
-                    <h4 class="low">19°</h4>
-                </div>
-            </div>
-            <!-- Day 2 Weather ends -->
-
-            <!-- Day 3 Weather begins -->
-            <div id="col-3-content">
-                <div id="weekly-weather-day-friday">
-                    <h3 class="day">Friday</h3>
-                </div>
-                <div id="weekly-weather-img">
-                    <img src="./assets/some_clouds.png" alt="clouds" class="cloud-img">
-                </div>
-                <div id="some-ptag-cloud">
-                    <p class="some-clouds">some clouds</p>
-                </div>
-                <div id="high-low">
-                    <h4 class="high">21°</h4>
-                    <h4 class="low">16°</h4>
-                </div>
-            </div>
-            <!-- Day 3 Weather ends -->
-
-            <!-- Day 4 Weather begins -->
-            <div id="col-4-content">
-                <div id="weekly-weather-day-saturday">
-                    <h3 class="day">Saturday</h3>
-                </div>
-                <div id="weekly-weather-img">
-                    <img src="./assets/some_sun.png" alt="sun" class="sun-img">
-                </div>
-                <div id="some-ptag-sun">
-                    <p class="some-sun">some sun</p>
-                </div>
-                <div id="high-low">
-                    <h4 class="high">26°</h4>
-                    <h4 class="low">21°</h4>
-                </div>
-            </div>
-            <!-- Day 4 Weather ends -->
-
-        </div>
-        <!-- Weekly Weather Row ends -->
-
-        <!-- Cookies Row begins -->
-        <div id="main-cookie-div">
-            <div id="cookie-div-content">
-                <div id="cookie-img-div">
-                    <img src="./assets/cookie.png" alt="cookie" class="cookie-img">
-                </div>
-                <div id="cookie-text-div">
-                    <p class="cookie-warning">Stop! Cookie Time</p>
-                    <p class="cookie-description">
-                        We use cookies (sadly not the edible ones) to personalize <br>
-                        content and ads, to provide social media features and to <br>
-                        analyse our traffic. <a href="#">Read more...</a>
-                    </p>
-                </div>
-                <div id="cookie-accept-btn">
-                    <button class="accept-btn" onclick="acceptRemove()">I accept</button>
-                </div>
-            </div>
-        </div>
-        <!-- Cookies Row ends -->
-    
     </div>
-    <!-- container align-items flex start ends -->
-    <script src="./script.js"></script>
+    <div class="container">
+        <div class="subtitle-line">
+            <h2>San Jose</h2>
+            <form>
+                <label>Show temperature in </label>
+                <select name="temperature-scale" onchange="convert(this)">
+                    <option>°C</option>
+                    <option>°F</option>
+                </select>
+            </form>
+        </div>
+        <div class="row">
+            <div class="forecast">
+                <h1>Today</h1>
+                <img src="assets/some_rain.png" alt="rain">
+                <p>some rain</p>
+                <p class="temperatures">
+                    <span class="high" id="temp1">24</span>
+                    <span class="low" id="temp2">18</span>
+                </p>
+            </div>
+            <div class="forecast">
+                <h1>Tomorrow</h1>
+                <img src="assets/some_sun.png" alt="sun">
+                <p>some sun</p>
+                <p class="temperatures">
+                    <span class="high" id="temp3">27</span>
+                    <span class="low" id="temp4">19</span>
+                </p>
+            </div>
+            <div class="forecast">
+                <h1>Friday</h1>
+                <img src="assets/some_clouds.png" alt="clouds">
+                <p>some cloud</p>
+                <p class="temperatures">
+                    <span class="high" id="temp5">21</span>
+                    <span class="low" id="temp6">16</span>
+                </p>
+            </div>
+            <div class="forecast">
+                <h1>Saturday</h1>
+                <img src="assets/some_sun.png" alt="sun">
+                <p>some sun</p>
+                <p class="temperatures">
+                    <span class="high" id="temp7">26</span>
+                    <span class="low" id="temp8">21</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="cookie-policy">
+            <img src="assets/cookie.png" alt="cookie">
+            <div class="text">
+                <h2>Stop! Cookie time.</h2>
+                <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyze our site traffic. <a href="#">Read more...</a></p>
+            </div>
+            <button class="btn" onclick="accept()">Accept</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
